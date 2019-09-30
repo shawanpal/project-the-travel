@@ -31,11 +31,27 @@
 <!-- END TOP SEARCH BOX -->
 <!--DASHBOARD-->
 
-<section>
+<section> 
     <div class="tr-register">
         <div class="tr-regi-form">
             <h4>Sign In</h4>
             <p>It's free and always will be.</p>
+            @if(Session::has('status'))
+            <div class="alert alert-success alert-dismissible show" role="alert">
+                <p>{{ Session::get('status') }}</p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @endif
+            @if(Session::has('status-danger'))
+            <div class="alert alert-danger alert-dismissible show" role="alert">
+                <p>{{ Session::get('status-danger') }}</p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @endif
             <form class="col s12" id="signinForm" action="{{ route('login') }}" method="post">
                 @csrf
                 <div class="row">

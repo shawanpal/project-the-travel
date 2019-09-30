@@ -20,9 +20,9 @@
     </head>
     <body>
         <!-- Preloader -->
-<!--        <div id="preloader">
-            <div id="status"></div>
-        </div>-->
+        <!--        <div id="preloader">
+                    <div id="status"></div>
+                </div>-->
         <!-- MOBILE MENU -->
         <section>
             <div class="ed-mob-menu">
@@ -72,12 +72,14 @@
                                 </ul>
                             </div>
                             <div class="ed-com-t1-right">
+                                @if(Session::has('user_id'))
+                                {{ Session::get('user_id') }}
+                                @else
                                 <ul>
-                                    <li><a href="{{url('/signin')}}">Sign In</a>
-                                    </li>
-                                    <li><a href="{{url('/signup')}}">Sign Up</a>
-                                    </li>
+                                    <li><a href="{{url('/signin')}}">Sign In</a></li>
+                                    <li><a href="{{url('/signup')}}">Sign Up</a></li>
                                 </ul>
+                                @endif
                             </div>
                             <div class="ed-com-t1-social">
                                 <ul>
@@ -100,7 +102,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="wed-logo">
-                                <a href="main.html"><img src="{{asset('public/images/logo.png')}}" alt="" />
+                                <a href="{{url('/')}}"><img src="{{asset('public/images/logo.png')}}" alt="" />
                                 </a>
                             </div>
                             <div class="main-menu">

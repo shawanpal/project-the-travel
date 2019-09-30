@@ -7893,7 +7893,7 @@ html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:activ
     top: 0 !important;
     color: #f00 !important;
 }
-input[type=email].error,input[type=password].error{
+input[type=email].error,input[type=password].error,input[type=text].error,input[type=number].error{
     border-bottom: 1px solid #f00 !important;
     box-shadow: 0 1px 0 0 #f00 !important;
 }

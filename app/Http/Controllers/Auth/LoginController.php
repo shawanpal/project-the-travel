@@ -3,14 +3,16 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Database\Eloquent\Collection;
-use App\Models\User;
+use App\User;
 use Illuminate\Support\Facades\Input;
 use Hash;
+use Session;
 
 class LoginController extends Controller {
     /*
@@ -55,12 +57,17 @@ use AuthenticatesUsers;
         } else {
             $email = $request->input('email');
             $password = $request->input('password');
-            $hashed = Hash::make($password);
-            $condition = array('email' => $email, 'password' => $hashed, 'status' => 1);
-            $users = new User();
-            $fetch = $users::where($condition)->get();
-            print_r($condition);
-            die();
+            $credentials = array('email' => $email, 'password' => $password, 'status' => 1);
+            if (Auth::attempt($credentials)) {
+                //$request->session()->put('user_id', $request->get('id'));
+                session([
+                    'user_id' => $request->get('id')
+                ]);
+                return redirect('/');
+            } else {
+                Session::flash('status-danger', "Invalid Credentials , Please try again.");
+                return Redirect::back();
+            }
         }
     }
 

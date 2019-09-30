@@ -35,38 +35,51 @@
         <div class="tr-regi-form">
             <h4>Create an Account</h4>
             <p>It's free and always will be.</p>
-            <form method="post" action="" class="col s12">
+            <form method="post" action="{{ route('register') }}" class="col s12" id="signupForm">
+                @csrf
                 <div class="row">
                     <div class="input-field col m6 s12">
-                        <input type="text" class="validate">
+                        <input type="text" class="validate" name="first_name" value="{{ $errors->register->first('first_name') }}">
                         <label>First Name</label>
+                        @if ($errors->has('first_name'))
+                        <div class="error">{{ $errors->first('first_name') }}</div>
+                        @endif
                     </div>
                     <div class="input-field col m6 s12">
-                        <input type="text" class="validate">
+                        <input type="text" class="validate" name="last_name" value="{{ $errors->register->first('last_name') }}">
                         <label>Last Name</label>
+                        @if ($errors->has('last_name'))
+                        <div class="error">{{ $errors->first('last_name') }}</div>
+                        @endif
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input type="number" class="validate">
+                        <input type="number" class="validate" name="mobile_no" value="{{ $errors->register->first('mobile_no') }}">
                         <label>Mobile</label>
+                        @if ($errors->has('mobile_no'))
+                        <div class="error">{{ $errors->first('mobile_no') }}</div>
+                        @endif
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input type="email" class="validate">
+                        <input type="email" class="validate" name="email" value="{{ $errors->register->first('email') }}">
                         <label>Email</label>
+                        @if ($errors->has('email'))
+                        <div class="error">{{ $errors->first('email') }}</div>
+                        @endif
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input type="password" class="validate">
+                        <input type="password" class="validate" name="password" id="password">
                         <label>Password</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input type="password" class="validate">
+                        <input type="password" class="validate" name="confirm_password">
                         <label>Confirm Password</label>
                     </div>
                 </div>
