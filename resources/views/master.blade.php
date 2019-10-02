@@ -45,10 +45,17 @@
                                     <li><a href="{{url('/contact')}}">Contact us</a></li>
                                 </ul>
                                 <div class="ed-com-t1-center">
+                                    @if(Session::has('user_id'))
+                                    <ul>
+                                        <li><a href="{{url('/profile')}}">Profile</a></li>
+                                        <li><a href="{{route('logout')}}">Logout</a></li>
+                                    </ul>
+                                    @else
                                     <ul>
                                         <li><a href="{{url('/signin')}}">Sign In</a></li>
                                         <li><a href="{{url('/signup')}}">Sign Up</a></li>
                                     </ul>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -73,7 +80,10 @@
                             </div>
                             <div class="ed-com-t1-right">
                                 @if(Session::has('user_id'))
-                                {{ Session::get('user_id') }}
+                                <ul>
+                                    <li><a href="{{url('/profile')}}">Profile</a></li>
+                                    <li><a href="{{route('logout')}}">Logout</a></li>
+                                </ul>
                                 @else
                                 <ul>
                                     <li><a href="{{url('/signin')}}">Sign In</a></li>

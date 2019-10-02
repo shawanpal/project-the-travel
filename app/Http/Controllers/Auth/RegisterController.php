@@ -24,31 +24,9 @@ class RegisterController extends Controller {
 
 use RegistersUsers;
 
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/signin';
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct() {
-        $this->middleware('guest');
-    }
-
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\User
-     */
     protected function create(array $data) {
         $user = new User();
-        return $user::create($data);//return $data;
+        return $user::create($data);
     }
 
     /**
@@ -76,7 +54,7 @@ use RegistersUsers;
             $hashed = Hash::make($password);
             $data = array('first_name' => $first_name, 'last_name' => $last_name, 'mobile_no' => $mobile_no, 'email' => $email, 'password' => $hashed);
             $submit_data = $this->create($data);
-            if($submit_data){
+            if ($submit_data) {
                 $request->session()->flash('status', 'Register Successfully!');
                 return redirect('/signin');
             }

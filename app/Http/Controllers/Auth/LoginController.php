@@ -28,23 +28,8 @@ class LoginController extends Controller {
 
 use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/';
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct() {
-        $this->middleware('guest')->except('logout');
-    }
-
     public function userLogin(Request $request) {
+
         $validator = Validator::make($request->all(), [
                     'email' => 'email|string|required',
                     'password' => 'string|required|min:8'
@@ -59,13 +44,10 @@ use AuthenticatesUsers;
             $password = $request->input('password');
             $credentials = array('email' => $email, 'password' => $password, 'status' => 1);
             if (Auth::attempt($credentials)) {
-                //$request->session()->put('user_id', $request->get('id'));
-                session([
-                    'user_id' => $request->get('id')
-                ]);
+                $request->session()->put('user_id', Auth::user()->id);
                 return redirect('/');
             } else {
-                Session::flash('status-danger', "Invalid Credentials , Please try again.");
+                $request->session()->flash('status-danger', "Invalid Credentials , Please try again.");
                 return Redirect::back();
             }
         }
