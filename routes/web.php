@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index')->name('home');
-
+Route::get('/contact', 'ContactController@index')->name('contact');
 /**
  * Auth Routes
  */

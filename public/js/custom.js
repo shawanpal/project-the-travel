@@ -226,13 +226,13 @@ $(function () {
             }
         }
     });
-    
+
     $("#signupForm").validate({
         rules: {
             first_name: "required",
             last_name: "required",
-            mobile_no:{
-                required:true,
+            mobile_no: {
+                required: true,
                 number: true
             },
             email: {
@@ -263,6 +263,33 @@ $(function () {
                 minlength: "Your password must be at least 8 characters long",
                 equalTo: "Please enter the same password as above"
             },
+        }
+    });
+
+    $("#contactForm").validate({
+        rules: {
+            name: "required",
+            phone: {
+                required: true,
+                number: true
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            subject: "required"
+        },
+        messages: {
+            name: "Please enter your full name",
+            phone: "Please enter your mobile no",
+            email: "Please enter a valid email address",
+            subject: "Please enter your subject"
+        }
+    });
+    $('[data-toggle="tooltip"]').tooltip({
+        delay: {
+            show: 500,
+            hide: 5000
         }
     });
 });

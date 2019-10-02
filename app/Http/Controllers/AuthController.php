@@ -34,5 +34,4 @@ class AuthController extends Controller {
         }
         
     }
-//return Redirect::back()->withErrors(['msg', 'The Message']);
 }

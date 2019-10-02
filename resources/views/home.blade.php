@@ -54,171 +54,24 @@
                     <div class="tl-2"></div>
                     <div class="tl-3"></div>
                 </div>
-                <p>Wo                                                                                                                                        rld's leading tour and travels Booking                                                                                                                                        website,Over 30,000 packages worldwide.</p>
+                <p>World's leading tour and travels Booking website,Over 30,000 packages worldwide.</p>
             </div>
             <div>
-                <!-- TOUR PLACE 1 -->
+                @foreach($packages as $package)
                 <div class="col-md-4 col-sm-6 col-xs-12 b_packages wow slideInUp" data-wow-duration="0.5s">
                     <!-- OFFER BRAND -->
                     <div class="band"> <img src="{{asset('public/images/band.png')}}" alt="" /> </div>
                     <!-- IMAGE -->
-                    <div class="v_place_img"> <img src="{{asset('public/images/t5.png')}}" alt="Tour Booking" title="Tour Booking" /> </div>
+                    <div class="v_place_img"> <img src="{{asset('public/images/packages/thumbnail/'.$package->thumbnail)}}" alt="{{$package->title}}" title="{{$package->title}}" /> </div>
                     <!-- TOUR TITLE & ICONS -->
                     <div class="b_pack rows">
                         <!-- TOUR TITLE -->
-                        <div class="col-md-8 col-sm-8">
-                            <h4><a href="tour-details.html">Rio de Janeiro<span class="v_pl_name">(Brazil)</span></a></h4>
-                        </div>
-                        <!-- TOUR ICONS -->
-                        <div class="col-md-4 col-sm-4 pack_icon">
-                            <ul>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/clock.png')}}" alt="Date" title="Tour Timing" /> </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/info.png')}}" alt="Details" title="View more details" /> </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/price.png')}}" alt="Price" title="Price" /> </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/map.png')}}" alt="Location" title="Location" /> </a>
-                                </li>
-                            </ul>
+                        <div class="col-md-12 col-sm-12">
+                            <h4><a href="{{url('packages/'.$package->alias)}}">{{$package->title}}<span class="v_pl_name">(Brazil)</span></a></h4>
                         </div>
                     </div>
                 </div>
-                <!-- TOUR PLACE 2 -->
-                <div class="col-md-4 col-sm-6 col-xs-12 b_packages wow fadeInUp" data-wow-duration="0.7s">
-                    <!-- OFFER BRAND -->
-                    <div class="band"> <img src="{{asset('public/images/band1.png')}}" alt="" /> </div>
-                    <!-- IMAGE -->
-                    <div class="v_place_img"> <img src="{{asset('public/images/t1.png')}}" alt="Tour Booking" title="Tour Booking" /> </div>
-                    <!-- TOUR TITLE & ICONS -->
-                    <div class="b_pack rows">
-                        <!-- TOUR TITLE -->
-                        <div class="col-md-8 col-sm-8">
-                            <h4><a href="tour-details.html">Paris<span class="v_pl_name">(England)</span></a></h4>
-                        </div>
-                        <!-- TOUR ICONS -->
-                        <div class="col-md-4 col-sm-4 pack_icon">
-                            <ul>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/clock.png')}}" alt="Date" title="Tour Timing" /> </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/info.png')}}" alt="Details" title="View more details" /> </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/price.png')}}" alt="Price" title="Price" /> </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/map.png')}}" alt="Location" title="Location" /> </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- TOUR PLACE 3 -->
-                <div class="col-md-4 col-sm-6 col-xs-12 b_packages wow fadeInUp" data-wow-duration="0.9s">
-                    <div class="v_place_img"><img src="{{asset('public/images/t2.png')}}" alt="Tour Booking" title="Tour Booking" /> </div>
-                    <div class="b_pack rows">
-                        <div class="col-md-8 col-sm-8">
-                            <h4><a href="tour-details.html">South India<span class="v_pl_name">(India)</span></a></h4>
-                        </div>
-                        <div class="col-md-4 col-sm-4 pack_icon">
-                            <ul>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/clock.png')}}" alt="Date" title="Tour Timing" /> </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/info.png')}}" alt="Details" title="View more details" /> </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/price.png')}}" alt="Price" title="Price" /> </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/map.png')}}" alt="Location" title="Location" /> </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- TOUR PLACE 4 -->
-                <div class="col-md-4 col-sm-6 col-xs-12 b_packages wow fadeInUp" data-wow-duration="1.1s">
-                    <div class="v_place_img"><img src="{{asset('public/images/t3.png')}}" alt="Tour Booking" title="Tour Booking" /> </div>
-                    <div class="b_pack rows">
-                        <div class="col-md-8 col-sm-8">
-                            <h4><a href="tour-details.html">The Great Wall<span class="v_pl_name">(China)</span></a></h4>
-                        </div>
-                        <div class="col-md-4 col-sm-4 pack_icon">
-                            <ul>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/clock.png')}}" alt="Date" title="Tour Timing" /> </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/info.png')}}" alt="Details" title="View more details" /> </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/price.png')}}" alt="Price" title="Price" /> </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/map.png')}}" alt="Location" title="Location" /> </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- TOUR PLACE 5 -->
-                <div class="col-md-4 col-sm-6 col-xs-12 b_packages wow fadeInUp" data-wow-duration="1.3s">
-                    <div class="v_place_img"><img src="{{asset('public/images/t4.png')}}" alt="Tour Booking" title="Tour Booking" /> </div>
-                    <div class="b_pack rows">
-                        <div class="col-md-8 col-sm-8">
-                            <h4><a href="tour-details.html">Nail Island<span class="v_pl_name">(Andaman)</span></a></h4>
-                        </div>
-                        <div class="col-md-4 col-sm-4 pack_icon">
-                            <ul>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/clock.png')}}" alt="Date" title="Tour Timing" /> </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/info.png')}}" alt="Details" title="View more details" /> </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/price.png')}}" alt="Price" title="Price" /> </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/map.png')}}" alt="Location" title="Location" /> </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- TOUR PLACE 6 -->
-                <div class="col-md-4 col-sm-6 col-xs-12 b_packages wow fadeInUp" data-wow-duration="1.5s">
-                    <div class="v_place_img"><img src="{{asset('public/images/t6.png')}}" alt="Tour Booking" title="Tour Booking" /> </div>
-                    <div class="b_pack rows">
-                        <div class="col-md-8 col-sm-8">
-                            <h4><a href="tour-details.html">Mauritius<span class="v_pl_name">(Indiana)</span></a></h4>
-                        </div>
-                        <div class="col-md-4 col-sm-4 pack_icon">
-                            <ul>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/clock.png')}}" alt="Date" title="Tour Timing" /> </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/info.png')}}" alt="Details" title="View more details" /> </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/price.png')}}" alt="Price" title="Price" /> </a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="{{asset('public/images/map.png')}}" alt="Location" title="Location" /> </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -241,9 +94,9 @@
             <div class="col-md-6">
                 <a href="tour-details.html">
                     <div class="tour-mig-like-com">
-                        <div class="tour-mig-lc-img"> <img src="{{asset('public/images/listing/home.jpg')}}" alt=""> </div>
+                        <div class="tour-mig-lc-img"> <img src="{{asset('public/images/country/paris.jpg')}}" alt=""> </div>
                         <div class="tour-mig-lc-con">
-                            <h5>Europe</h5>
+                            <h5>France</h5>
                             <p><span>12 Packages</span> Starting from $2400</p>
                         </div>
                     </div>
@@ -252,7 +105,7 @@
             <div class="col-md-3">
                 <a href="tour-details.html">
                     <div class="tour-mig-like-com">
-                        <div class="tour-mig-lc-img"> <img src="{{asset('public/images/listing/home3.jpg')}}" alt=""> </div>
+                        <div class="tour-mig-lc-img"> <img src="{{asset('public/images/country/dubai.jpg')}}" alt=""> </div>
                         <div class="tour-mig-lc-con tour-mig-lc-con2">
                             <h5>Dubai</h5>
                             <p>Starting from $2400</p>
@@ -263,7 +116,7 @@
             <div class="col-md-3">
                 <a href="tour-details.html">
                     <div class="tour-mig-like-com">
-                        <div class="tour-mig-lc-img"> <img src="{{asset('public/images/listing/home2.jpg')}}" alt=""> </div>
+                        <div class="tour-mig-lc-img"> <img src="{{asset('public/images/country/india.jpg')}}" alt=""> </div>
                         <div class="tour-mig-lc-con tour-mig-lc-con2">
                             <h5>India</h5>
                             <p>Starting from $2400</p>
@@ -274,7 +127,7 @@
             <div class="col-md-3">
                 <a href="tour-details.html">
                     <div class="tour-mig-like-com">
-                        <div class="tour-mig-lc-img"> <img src="{{asset('public/images/listing/home1.jpg')}}" alt=""> </div>
+                        <div class="tour-mig-lc-img"> <img src="{{asset('public/images/country/usa.jpg')}}" alt=""> </div>
                         <div class="tour-mig-lc-con tour-mig-lc-con2">
                             <h5>Usa</h5>
                             <p>Starting from $2400</p>
@@ -285,7 +138,7 @@
             <div class="col-md-3">
                 <a href="tour-details.html">
                     <div class="tour-mig-like-com">
-                        <div class="tour-mig-lc-img"> <img src="{{asset('public/images/listing/home4.jpg')}}" alt=""> </div>
+                        <div class="tour-mig-lc-img"> <img src="{{asset('public/images/country/london.jpg')}}" alt=""> </div>
                         <div class="tour-mig-lc-con tour-mig-lc-con2">
                             <h5>London</h5>
                             <p>Starting from $2400</p>
