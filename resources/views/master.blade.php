@@ -118,7 +118,7 @@
                             <div class="main-menu">
                                 <ul>
                                     <li class="{{Route::is('home') ? 'active' : '' }}"><a href="{{url('/')}}">Home</a></li>
-                                    <li class="{{Route::is('packages') ? 'active' : '' }}"><a href="{{url('/packages')}}">Packages</a></li>
+                                    <li class="{{Route::is('package') || Route::is('package_details') ? 'active' : '' }}"><a href="{{url('/packages')}}">Packages</a></li>
                                     <li class="{{Route::is('hotels') ? 'active' : '' }}"><a href="{{url('/hotels')}}">Hotels</a></li>
                                     <li class="{{Route::is('events') ? 'active' : '' }}"><a href="{{url('/events')}}">Events</a></li>
                                     <li class="{{Route::is('contact') ? 'active' : '' }}"><a href="{{url('/contact')}}">Contact us</a></li>

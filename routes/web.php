@@ -13,6 +13,12 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/contact', 'ContactController@index')->name('contact');
+Route::get('/packages', 'PackageController@index')->name('package');
+Route::get('/packages/{packageName}', 'PackageController@details')->name('package_details');
+
+
+Route::get('/book-now', 'PackageController@booking')->name('booking');
+
 /**
  * Auth Routes
  */

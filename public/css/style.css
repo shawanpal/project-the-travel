@@ -1722,7 +1722,6 @@ footer ul li a {
 /* 15.1 COMMON BANNER 
 /*-------------------------------------------------------*/
 .inner_banner {
-    background: url('../images/list-p-bg.jpg') no-repeat center center;
     background-size: cover;
     padding: 180px 0px 40px 0px;
     position: relative;
@@ -1736,26 +1735,7 @@ footer ul li a {
     left: 0px;
     width: 100%;
 }
-.inner_banner_1 {
-    background: url('../images/banner/1.jpg') no-repeat center center;
-    background-size: cover;
-}
-.inner_banner_2 {
-    background: url('../images/banner/2.jpg') no-repeat center center;
-    background-size: cover;
-}
-.inner_banner_3 {
-    background: url('../images/banner/3.jpg') no-repeat center center;
-    background-size: cover;
-}
-.inner_banner_4 {
-    background: url('../images/banner/4.jpg') no-repeat center center;
-    background-size: cover;
-}
-.inner_banner_5 {
-    background: url('../images/banner/5.jpg') no-repeat center center;
-    background-size: cover;
-}
+
 .inner_banner div {
     position: relative;
 }
@@ -3732,6 +3712,7 @@ fieldset, label {
     position: relative;
     overflow: hidden;
     margin: 15px 15px 15px 0px;
+    padding: 25px 10px;
     transition: all 0.5s ease;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -7839,7 +7820,7 @@ html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:activ
 }
 .trav-ami{
     display: inline-block;
-    padding: 15px 15px 5px 15px;
+    padding: 15px 15px 5px 0;
     border-top: 1px solid #dfd2bf;
     width: 100%;
     margin-top: 10px;
@@ -7926,5 +7907,18 @@ input[type=email].error,input[type=password].error,input[type=text].error,input[
     font-size: 14px;
     border: 1px solid #efefef;
 }
-.tooltip-arrow,
-.tooltip-green + .tooltip > .tooltip-inner {background-color: #f00;}
+.star-ratings-sprite {
+    background: url(../images/star-rating-sprite.png) repeat-x;
+    overflow: hidden;
+    text-indent: -999em;
+    width: 110px;
+    display: inline-block;
+}
+.star-ratings-sprite-rating {
+    background: url("../images/star-rating-sprite.png") repeat-x;
+    background-position: 0 100%;
+    float: left;
+    height: 21px;
+    display:block;
+}
+

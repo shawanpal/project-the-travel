@@ -59,15 +59,17 @@
             <div>
                 @foreach($packages as $package)
                 <div class="col-md-4 col-sm-6 col-xs-12 b_packages wow slideInUp" data-wow-duration="0.5s">
+                    @if($package->sale_tag != '')
                     <!-- OFFER BRAND -->
-                    <div class="band"> <img src="{{asset('public/images/band.png')}}" alt="" /> </div>
+                    <div class="band"> <img src="{{asset('public/images/'.$package->sale_tag)}}" alt="" /> </div>
+                    @endif
                     <!-- IMAGE -->
-                    <div class="v_place_img"> <img src="{{asset('public/images/packages/thumbnail/'.$package->thumbnail)}}" alt="{{$package->title}}" title="{{$package->title}}" /> </div>
+                    <div class="v_place_img"> <img src="{{asset('public/images/package/thumbnail/'.$package->thumbnail)}}" alt="{{$package->title}}" title="{{$package->title}}" /> </div>
                     <!-- TOUR TITLE & ICONS -->
                     <div class="b_pack rows">
                         <!-- TOUR TITLE -->
                         <div class="col-md-12 col-sm-12">
-                            <h4><a href="{{url('packages/'.$package->alias)}}">{{$package->title}}<span class="v_pl_name">(Brazil)</span></a></h4>
+                            <h4><a href="{{url('packages/'.$package->alias)}}">{{$package->title}}<span class="v_pl_name">({{$package->country_name}})</span></a></h4>
                         </div>
                     </div>
                 </div>
