@@ -29,6 +29,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "jquery-validation": "^1.19.1"
+    "jquery-validation": "^1.19.5"
   }
 }
